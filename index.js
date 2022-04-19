@@ -3,8 +3,9 @@ const express = require("express");
 
 const app = express();
 
-require('./setup/database')();
+require("./setup/database")();
+require("./setup/routes")(app);
 
-app.listen(3000, () => {
-    console.log("Server is running at port 3000");
+app.listen(8000, () => {
+  console.log("Server is running at port 8000");
 });

@@ -1,5 +1,3 @@
-const logger = require("../setup/logger");
-
 const error = (err, req, res, next) => {
   logger.error("error", err.message);
   return res
