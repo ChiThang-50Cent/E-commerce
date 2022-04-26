@@ -6,8 +6,9 @@ const productSchema = new mongoose.Schema({
     price: { type: Number, required: true },
     image: { type: String, required: true },
     detail: { type: String, required: true },
-    catetory: { type: mongoose.Schema.ObjectId, required: true },
-    description: { type: Array[{ type: String }] },
+    //catetory: { type: mongoose.Schema.ObjectId, required: true },
+    catetory: { type: String },
+    description: { type: [{ type: String }] },
 });
 
 const Products = mongoose.model("Products", productSchema);
