@@ -3,3 +3,5 @@ node_modules/
 environments/environment.local.js
 
 .env
+
+.http
