@@ -13,20 +13,8 @@ const userSchema = new mongoose.Schema({
     isAdmin: { type: Boolean, default: false },
 }, { versionKey: false });
 
-userSchema.methods.generateAuthToken = () => {
-    return jwt.sign({
-            ..._.pick(this, [
-                "_id",
-                "fullname",
-                "email",
-                "avatar",
-                "phoneNumber",
-                "address",
-                "isAdmin",
-            ]),
-        },
-        process.env.APP_SECRET_KEY
-    );
+userSchema.methods.generateAuthToken = (user) => {
+    return jwt.sign(user, process.env.APP_SECRET_KEY, { expiresIn: "7d" });
 };
 
 const User = mongoose.model("User", userSchema);

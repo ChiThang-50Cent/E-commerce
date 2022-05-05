@@ -4,7 +4,6 @@ const cors = require("cors");
 const express = require("express");
 const timeout = require("connect-timeout");
 
-const error = require("../middlewares/error.middleware");
 const environment = require("../environments/environment.local");
 
 const { USER_API, PRODUCT_API } = require("../constants/default");
@@ -25,6 +24,4 @@ module.exports = (app) => {
 
     app.use(USER_API, user);
     app.use(PRODUCT_API, product);
-
-    //app.use(error);
 };

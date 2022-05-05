@@ -23,7 +23,8 @@ const login = async(req, res) => {
             message: "Invalid email or password",
         });
 
-    const token = user.generateAuthToken();
+    delete user._doc.password;
+    const token = user.generateAuthToken({...user._doc });
 
     return res
         .header("x-auth-token", token)
