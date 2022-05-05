@@ -6,9 +6,11 @@ const timeout = require("connect-timeout");
 
 const environment = require("../environments/environment.local");
 
-const { USER_API, PRODUCT_API } = require("../constants/default");
+const API = require("../constants/default");
 const user = require("../modules/user/user.route");
 const product = require("../modules/product/product.route");
+const upload = require("../modules/upload/upload.route");
+const cateory = require("../modules/catetory/catetory.route");
 
 module.exports = (app) => {
     app.use(timeout("15s"));
@@ -22,6 +24,8 @@ module.exports = (app) => {
     app.use(helmet());
     app.use(express.json());
 
-    app.use(USER_API, user);
-    app.use(PRODUCT_API, product);
+    app.use(API.USER_API, user);
+    app.use(API.PRODUCT_API, product);
+    app.use(API.UPLOAD_API, upload);
+    app.use(API.CATETORY_API, cateory);
 };

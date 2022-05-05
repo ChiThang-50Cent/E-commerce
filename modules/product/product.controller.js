@@ -25,11 +25,7 @@ const createProduct = async(req, res) => {
 
     try {
         const { name, price, image, detail, catetory, description } = req.body;
-        //if (!image) return res.status(400).json({ msg: "No image upload." });
-
-        // const product = await Products.findOne({ });
-        // if (product)
-        //   return res.status(400).json({ msg: "This product already exists." });
+        if (!image) return res.status(400).json({ msg: "No image upload." });
 
         const newProduct = await Products({
             name,
