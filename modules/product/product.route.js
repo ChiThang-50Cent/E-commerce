@@ -12,5 +12,17 @@ router.post(
     adminAuthorization,
     product.createProduct
 );
+router.get(
+    "delete/:id",
+    authorization,
+    adminAuthorization,
+    product.deleteProduct
+);
+router.post(
+    "update/:id",
+    authorization,
+    adminAuthorization,
+    product.updateProduct
+);
 
 module.exports = router;

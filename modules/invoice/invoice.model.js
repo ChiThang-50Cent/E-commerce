@@ -4,10 +4,10 @@ const Joi = require("joi");
 const invoiceSchema = new mongoose.Schema({
     userId: { type: mongoose.Schema.ObjectId, required: true },
     products: {
-        type: Array[{
+        type: [{
             id: { type: mongoose.Schema.ObjectId, required: true },
             quantity: { type: Number, required: true },
-        }],
+        }, ],
     },
     total: { type: Number, required: true },
     voucherId: { type: mongoose.Schema.ObjectId },

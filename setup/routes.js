@@ -11,6 +11,7 @@ const user = require("../modules/user/user.route");
 const product = require("../modules/product/product.route");
 const upload = require("../modules/upload/upload.route");
 const cateory = require("../modules/catetory/catetory.route");
+const invoice = require("../modules/invoice/invoice.route");
 
 module.exports = (app) => {
     app.use(timeout("15s"));
@@ -28,4 +29,5 @@ module.exports = (app) => {
     app.use(API.PRODUCT_API, product);
     app.use(API.UPLOAD_API, upload);
     app.use(API.CATETORY_API, cateory);
+    app.use(API.INVOICE_API, invoice);
 };

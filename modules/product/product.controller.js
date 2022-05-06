@@ -53,18 +53,25 @@ const deleteProduct = async(req, res) => {
 };
 
 const updateProduct = async(req, res) => {
+    const { error } = validateProduct(req.body);
+
+    if (error) {
+        return res
+            .status(400)
+            .send({ isError: true, message: error.details[0].message });
+    }
+
     try {
         const { name, price, image, detail, catetory, description } = req.body;
-        //if (!images) return res.status(400).json({ msg: "No image upload." });
 
-        // await Products.findOneAndUpdate({ _id: req.params.id }, {
-        //     name,
-        //     price,
-        //     image,
-        //     detail,
-        //     catetory,
-        //     description,
-        // });
+        await Products.findOneAndUpdate({ _id: req.params.id }, {
+            name,
+            price,
+            image,
+            detail,
+            catetory,
+            description,
+        });
 
         res.json({ msg: "Updated a product" });
     } catch (err) {
