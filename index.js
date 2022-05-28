@@ -8,5 +8,5 @@ require("./setup/database")();
 require("./setup/routes")(app);
 
 app.listen(PORT, () => {
-    console.log("Server is running at port 8000");
+    console.log("Server is running at port", PORT);
 });

@@ -1,10 +1,14 @@
 POST http://localhost:8000/api/product/create
 content-type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjY4MDNhMGMzYzA3M2Y1ZjkwOTczNWUiLCJlbWFpbCI6IlRoYW5nbWVveWRAZ21haWwuY29tIiwiZnVsbG5hbWUiOiJUaGFuZyIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NTE3NDI5NjEsImV4cCI6MTY1MjM0Nzc2MX0.jWovlROWS-rAYcdwaTg8CG1DBz6FxoUYaF9PUSbl4wM
 
 {
     "name" : "Noi",
     "price" : "5555",
-    "image" : "url",
+    "image" : {
+        "public_id" : "aaaa",
+        "url" : "url"
+    },
     "detail" : "detail",
     "catetory" : "cate Id",
     "description" : [
@@ -34,3 +38,26 @@ Content-Type: application/json
     "password" : "1234567890",
     "fullname" : "Thang"
 }
+
+###
+GET http://localhost:8000/api/catetory
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjY4MDNhMGMzYzA3M2Y1ZjkwOTczNWUiLCJlbWFpbCI6IlRoYW5nbWVveWRAZ21haWwuY29tIiwiZnVsbG5hbWUiOiJUaGFuZyIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NTE3NDI5NjEsImV4cCI6MTY1MjM0Nzc2MX0.jWovlROWS-rAYcdwaTg8CG1DBz6FxoUYaF9PUSbl4wM
+
+
+###
+POST http://localhost:8000/api/catetory/create
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjY4MDNhMGMzYzA3M2Y1ZjkwOTczNWUiLCJlbWFpbCI6IlRoYW5nbWVveWRAZ21haWwuY29tIiwiZnVsbG5hbWUiOiJUaGFuZyIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NTE3NDI5NjEsImV4cCI6MTY1MjM0Nzc2MX0.jWovlROWS-rAYcdwaTg8CG1DBz6FxoUYaF9PUSbl4wM
+
+{
+    "name" : "Do dien gia dung"
+}
+
+###
+GET http://localhost:8000/api/catetory/delete/6273afe4dd5ed7fadb651352
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjY4MDNhMGMzYzA3M2Y1ZjkwOTczNWUiLCJlbWFpbCI6IlRoYW5nbWVveWRAZ21haWwuY29tIiwiZnVsbG5hbWUiOiJUaGFuZyIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NTE3NDI5NjEsImV4cCI6MTY1MjM0Nzc2MX0.jWovlROWS-rAYcdwaTg8CG1DBz6FxoUYaF9PUSbl4wM
+
+###
+GET http://localhost:8000/api/invoice
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjY4MDNhMGMzYzA3M2Y1ZjkwOTczNWUiLCJlbWFpbCI6IlRoYW5nbWVveWRAZ21haWwuY29tIiwiZnVsbG5hbWUiOiJUaGFuZyIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NTE3NDI5NjEsImV4cCI6MTY1MjM0Nzc2MX0.jWovlROWS-rAYcdwaTg8CG1DBz6FxoUYaF9PUSbl4wM
+
